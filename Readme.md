@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Pavel](https://up.htmlacademy.ru/htmlcss/27/user/1242267).
-* Наставник: `[Андрей Корейкин](https://htmlacademy.ru/profile/ankormoreankor)`.
+* Наставник: [Андрей Корейкин](https://htmlacademy.ru/profile/ankormoreankor).
 
 ---
 
