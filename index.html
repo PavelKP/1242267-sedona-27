@@ -30,8 +30,8 @@
         </p>
       </header>
       <section>
-        <h2>
-          Преимущества <!-- будет невидимым -->
+        <h2 class="visually-hidden">
+          Преимущества
         </h2>
         <ul> <!-- flex container - ???-->
           <li> <!-- flex container-->
@@ -84,8 +84,8 @@
         </ul>
       </section>
       <section>
-        <h2>
-          Поиск гостиницы в Седоне <!-- будет невидимым -->
+        <h2 class="visually-hidden">
+          Поиск гостиницы в Седоне
         </h2>  
         <p>
           Заинтересовались?
@@ -95,7 +95,20 @@
           и мы покажем вам лучшие предложения гостиниц в седоне
         </p>
         <button type="button">Поиск гостиницы в Седоне</button>
-        <!-- тут будет форма --> 
+        <form action="https://echo.htmlacademy.ru" method="get">
+          <fildeset>
+            <legend class="visually-hidden">Параметры ддя поиска:</legend>
+            <label for="arrival-date">Дата заезда:</label>
+            <input id="arrival-id" type="text" name="arrival-date" placeholder="24 апреля 2017">
+            <label id="departure-id">Дата выезда:</label>
+            <input id="departure-id" type="text" name="departure-date" placeholder="4 июля 2017">
+            <label id="adults-id">Взрослые:</label>
+            <input id="adults-id" type="number" name="adults-num" placeholder="2" min="0">
+            <label id="children-id">Дети:</label>
+            <input id="children-id" type="number" name="children-num" placeholder="0" min="0">
+          </fildeset>
+          <button type="submit">Найти</button>
+        </form>
       </section>
       <section>
         <h2>Карта Седоны</h2>
