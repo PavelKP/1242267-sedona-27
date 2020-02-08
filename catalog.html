@@ -21,19 +21,39 @@
     <main>
       <h1 class="visually-hidden">Отели в Седонe</h1>
       <div>
-        <div>
-          <span>Инфраструктура:</span>
-          <!--checkboxes-->
-        </div>
-        <div>
-          <span>Тип жилья:</span>
-          <!--checkboxes-->
-        </div>
-        <div>
-          <span>Стоимость в сутки (Р):</span>
-          <!-- Form -->
-          <button>Показать</button>
-        </div>
+        <form action="https://echo.htmlacademy.ru" method="get">
+          <fieldset>
+            <legend>Инфраструктура:</legend>
+            <label for="waterpool-id">Бассейн</label>
+            <input id="waterpool-id" type="checkbox" name="waterpool" checked>
+            <label for="parking-id">Парковка</label>
+            <input id="parking-id" type="checkbox" name="parking">
+            <label for="wifi-id">wi-fi</label>
+            <input id="wifi-id" type="checkbox" name="wifi">
+          </fieldset>
+          <fieldset>
+            <legend>Тип жилья:</legend>
+            <label for="hotel-id">Гостиница</label>
+            <input id="hotel-id" type="checkbox" name="hotel" checked>
+            <label for="motel-id">Мотель</label>
+            <input id="motel-id" type="checkbox" name="motel" checked>
+            <label for="apartment-id">Апартаменты</label>
+            <input id="apartment-id" type="checkbox" name="apartment" checked>
+          </fieldset>
+          <fieldset>
+            <legend>Стоимость в сутки (Р):</legend>
+            <label for="price-min-id" class="visually-hidden">Минимальная стоимость</label>
+            <input id="price-min-id" type="number" min="0" max="3000" name="price-min" placeholder="от 0">
+            <label for="price-max-id" class="visually-hidden">Максимальная стоимость</label>
+            <input id="price-max-id" type="number" min="0" max="3000" name="price-max" placeholder="до 3000">
+            <!-- Ползунок -->
+            <div>
+              <button type="button"></button>
+              <button type="button"></button>
+            </div>
+          </fieldset>
+          <button type="submit">Показать</button>
+        </form>
       </div>
       <div>
         Найдено: <span>3</span>
