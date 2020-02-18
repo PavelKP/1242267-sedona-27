@@ -21,8 +21,8 @@
       </nav>
     </header>
     <main>
+      <h1 class="visually-hidden">Отели в Седонe</h1>
       <div class="center-form">
-        <h1 class="visually-hidden">Отели в Седонe</h1>
         <form class="horizontal-form" action="https://echo.htmlacademy.ru" method="get">
           <div class="horizontal-form__column">
             <fieldset> <!-- fieldset - блочная обёртка + ей нельзя сделать flex, ещё и margin-top для legend из неё вываливается !-->
@@ -91,8 +91,8 @@
         </form>
       </div>
       <div class ="sorting">
-        <div class="sorting__found">Найдено: 3</div>
-        <div class="sorting__sort">Сортировка:</div>
+        <p>Найдено: 3</p>
+        <p>Сортировка:</p>
         <ul class="list">
           <li>
             <button class="sorting__btn sorting__btn--current button-reset">по цене</button>
@@ -104,10 +104,12 @@
             <button class="sorting__btn button-reset">по рейтингу</button>
           </li>
           <li class="sorting__choose-order">
-            <button class="visually-hidden" type="button"><!--вверх--></button>
-            <span class="sorting__up"></span>
-            <button class="visually-hidden" type="button"><!--вниз--></button>
-            <span class="sorting__down sorting__down--current"></span>
+            <button class="sorting__up button-reset" type="button">
+              <span class="visually-hidden">Вверх</span>
+            </button>
+            <button class="sorting__down sorting__down--current button-reset" type="button">
+              <span class="visually-hidden">Вниз</span>
+            </button>
           </li>
         </ul>
       </div>

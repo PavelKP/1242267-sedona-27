@@ -73,13 +73,6 @@ a {
 .placeholder-black::-moz-placeholder { 
   color: #000000;
 }
-.placeholder-black::-webkit-input-placeholder { 
-  color: #000000;
-}
-.placeholder-black::-moz-placeholder { 
-  color: #000000;
-}
-
 /* make placeholder white */
 .placeholder-white::-webkit-input-placeholder { 
   color: #ffffff;
@@ -87,13 +80,6 @@ a {
 .placeholder-white::-moz-placeholder { 
   color: #ffffff;
 }
-.placeholder-white::-webkit-input-placeholder { 
-  color: #ffffff;
-}
-.placeholder-white::-moz-placeholder { 
-  color: #ffffff;
-}
-
 
 /* Visually-hidden*/
 .visually-hidden:not(:focus):not(:active),
@@ -342,7 +328,8 @@ button[type="button"].visually-hidden {
   font-weight: bold;
 
   background-color: #ffffff;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Check in && Check out */
@@ -729,7 +716,7 @@ button[type="button"].visually-hidden {
 }
 .horizontal-form__show:hover {
   color: #000000;
-  background: #ffffff;
+  background-color: #ffffff;
 }
 
 /* Sorting block */
@@ -738,17 +725,20 @@ button[type="button"].visually-hidden {
   width: 1200px;
   min-height: 86px; 
 
+  color: #000000;
+
   background-color: #fefefe;
 }
-.sorting__found {
+.sorting p {
+  margin: 0;
+}
+.sorting p:first-of-type {
   font-size: 21px;
   font-weight: bold;
-  color: #000000;
 }
-.sorting__sort {
+.sorting p:last-of-type {
   font-size: 12px;
   line-height: 18px;
-  color: #000000;
 }
 .sorting ul {
   display: flex;
@@ -761,7 +751,7 @@ button[type="button"].visually-hidden {
   text-transform: uppercase; 
   color: rgba(0, 0, 0, 0.3);
 
-  background: transparent;
+  background-color: transparent;
 }
 .sorting__btn:hover {
   color: #81b3d2;
@@ -778,23 +768,25 @@ button[type="button"].visually-hidden {
 }
 /* Choose order (up and down arrows) */
 .sorting__choose-order {
+  display: flex;
   width: 34px;
-  height: 11px;
 }
-.sorting__choose-order span {
-  position: absolute;
+.sorting__choose-order button {
   display: block;
-
   width: 11px;
   height: 10px;
+  cursor: pointer;
+
+  background-color: transparent;
 }
 .sorting__up {
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"%3E%3Cpath fill="%23cacaca" d="M5.5 0L0 10h11z"/%3E%3C/svg%3E');
 }
 .sorting__down {
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"%3E%3Cpath fill="%23cacaca" d="M5.5 10L0 0h11"/%3E%3C/svg%3E');
-  margin-left: 24px;
+  margin-left: 12px;
   margin-top: -1px;
+
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"%3E%3Cpath fill="%23cacaca" d="M5.5 10L0 0h11"/%3E%3C/svg%3E');
 }
 /* --hover */
 .sorting__up:hover {
@@ -810,25 +802,18 @@ button[type="button"].visually-hidden {
 .sorting__down:active {
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"%3E%3Cpath fill="%2381b3d2" d="M5.5 10L0 0h11"/%3E%3C/svg%3E');
 }
-/* --focus */
-.sorting__choose-order button:first-of-type:focus + span {
-  outline: 1px solid #b0ddff;
-  outline-offset: 2px;
-}
-.sorting__choose-order button:last-of-type:focus + span {
-  outline: 1px solid #b0ddff;
-  outline-offset: 2px;
-}
 /* --current */
-.sorting__up--current,
+.sorting__up--current[type="button"], /* Add specificity to make pointer work */
 .sorting__up--current:hover,
 .sorting__up--current:active {
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"%3E%3Cpath fill="%2381b3d2" d="M5.5 0L0 10h11z"/%3E%3C/svg%3E');
+  cursor: auto;
 }
-.sorting__down--current,
+.sorting__down--current[type="button"], /* Add specificity to make pointer work */
 .sorting__down--current:hover,
 .sorting__down--current:active {
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"%3E%3Cpath fill="%2381b3d2" d="M5.5 10L0 0h11"/%3E%3C/svg%3E');
+  cursor: auto;
 }
 
 /* Output - hotel list*/
