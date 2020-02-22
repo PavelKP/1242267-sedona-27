@@ -196,11 +196,10 @@ button[type="button"].visually-hidden {
   font-weight: bold;
 }
 .header__navigation a {
-  word-wrap: wrap;
+  word-wrap: break-word;
   overflow-wrap: break-word;
   min-width: 0px; /* Hack. Overflow-wrap must have width property of text container */
 }
-
 .header__navigation li:nth-child(4n+1) {
   width: 240px;
 }
@@ -995,7 +994,7 @@ button[type="button"].visually-hidden {
 .output__rating-container {
   display: flex;
   flex-direction: column;
-  align-items: right;
+  align-items: flex-end;
   margin-left: auto;
 
   text-align: right;
