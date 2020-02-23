@@ -125,10 +125,7 @@ button[type="button"].visually-hidden {
   background-position: 0 -56px;
 }
 .top-header img {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: auto;
-  margin-top: 76px;
+  margin-bottom: 21px;
 }
 .top-header__mask {
   width: 1200px;
@@ -196,7 +193,6 @@ button[type="button"].visually-hidden {
   font-weight: bold;
 }
 .header__navigation a {
-  word-wrap: break-word;
   overflow-wrap: break-word;
   min-width: 0px; /* Hack. Overflow-wrap must have width property of text container */
 }
@@ -635,17 +631,12 @@ button[type="button"].visually-hidden {
 
 /* Websity by */ 
 
-.bottom__copy p {
-  outline: 1px solid red;
-}
 .bottom__copy svg {
   display: block;
-  outline: 1px solid yellow;
 }
 .bottom__copy {
   display: flex;
   align-items: center;
-  outline: 1px solid blue;
 }
 .bottom__copy a {
   display: block;
@@ -974,8 +965,6 @@ button[type="button"].visually-hidden {
 /* Output - hotel list items */
 
 .output {
-  width: 1200px;
-  height: 100%;
   border-top: 1px solid #e5e5e5;
 
   background-color: #fefefe;
@@ -988,7 +977,6 @@ button[type="button"].visually-hidden {
   border-bottom: 1px solid #e5e5e5;
 }
 .output img {
-  order: -1;
   margin-right: 30px;
 }
 .output__rating-container {
