@@ -193,6 +193,7 @@ button[type="button"].visually-hidden {
   font-weight: bold;
 }
 .header__navigation a {
+  word-break: break-all; /* fallback for old IEs*/
   overflow-wrap: break-word;
   min-width: 0px; /* Hack. Overflow-wrap must have width property of text container */
 }
