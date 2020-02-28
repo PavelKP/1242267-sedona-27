@@ -50,6 +50,17 @@ a {
   margin: 0;
   border: 0;
 }
+.wide-letter-spacing {
+  letter-spacing: 0.1em;
+}
+p.overflow-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  overflow-wrap: break-word;
+}
+
 /* remove increment arrows */
 /* -- chrome */
 .remove-arrows::-webkit-outer-spin-button,
@@ -112,12 +123,11 @@ button[type="button"].visually-hidden {
 /* Header */
 .top-header {
   display: flex;
-  height: 724px;
-  width: 1200px;
-  
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  
+  padding-top: 76px;
   
   background-color: #f2f2f2;
   background-image: url("../img/background-mountains.jpg");
@@ -125,6 +135,7 @@ button[type="button"].visually-hidden {
   background-position: 0 -56px;
 }
 .top-header img {
+  display: block;
   margin-bottom: 21px;
 }
 .top-header__mask {
@@ -136,18 +147,18 @@ button[type="button"].visually-hidden {
 .top-header__text {
   display: flex;
   padding-top: 61px; 
+  padding-bottom: 52px;
   flex-direction: column;
   align-items: center;
 
-  height: 216px;
-  width: 1200px;
+  width: 100%;
   
   background-color: #ffffff;
 
   overflow: hidden; /* Magic to prevent margin collapsing */ 
 }
 .top-header__text h1 {
-  width: 450px;
+  max-width: 450px; /* ???? как сделать шире, но сохранить перенос строки */
   margin: 0;
   margin-bottom: 25px;
 
@@ -158,10 +169,11 @@ button[type="button"].visually-hidden {
   font-size: 21px;
 }
 .top-header__text p {
-  width: 492px;
+  max-width: 800px;
   margin: 0;
-  margin-bottom: 52px;
-
+  
+  text-align: center;
+  vertical-align: middle;
   color: #333333;
 }
 
@@ -176,9 +188,10 @@ button[type="button"].visually-hidden {
 }
 .header__navigation ul {
   display: flex;  
-  flex-wrap: wrap;
+  flex-wrap: wrap;  
+  flex-shrink: 0;
+
   width: 1200px;
-  padding: 0 72px;
 
   background-color: #ffffff;
 }
@@ -187,33 +200,32 @@ button[type="button"].visually-hidden {
   align-items: center;
   flex-shrink: 0;
   flex-wrap: wrap;
-  min-height: 57px;
+  
+  padding-left: 72px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 240px; 
+  min-height: 56px;
   
   color: #000000;
   font-weight: bold;
 }
-.header__navigation a {
-  word-break: break-all; /* fallback for old IEs*/
+.header__navigation a,
+.current span {
+  /* word-break: break-all; - fallback for old IEs, but it works instead of overflow-wrap! */
   overflow-wrap: break-word;
-  min-width: 0px; /* Hack. Overflow-wrap must have width property of text container */
-}
-.header__navigation li:nth-child(4n+1) {
-  width: 240px;
-}
-.header__navigation li:nth-child(4n+2) {
-  width: 288px;
-  padding-right: 70px;
+  min-width: 0px; /* Hack. Overflow-wrap must have width property of text container. <a> doesn't, but with min-width: 0 or width: 100% <a> takes
+                      width from parent */
+                  /* Overflow-wrap doesn't work with display flex */
 }
 .header__navigation li:nth-child(4n+3) {
-  width: 288px;
-  padding-left: 70px;
-  justify-content: flex-end;
+  margin-left: 240px;
+  padding-left: 79px;
 }
 .header__navigation li:nth-child(4n+4) {
-  width: 240px;
-  justify-content: flex-end;
+  padding-left: 89px;
+  padding-right: 10px;
 }
-
 .header__navigation a,
 .header__navigation a:link,
 .header__navigation a:visited {
@@ -232,146 +244,178 @@ button[type="button"].visually-hidden {
 }
 
 /* Advantages - general properties */
+
+.advantages {
+  display: flex;
+  flex-wrap: wrap;
+}
 .advantages img {
   display: block;
 }
-
-/* First line, second line + Second item */
-.advantages__first-line div,
-.advantages__second-item div {
-  width: 400px;
-  height: 256px;
-
-  color: #ffffff;
-  line-height: 21px;
-  text-align: center;
-
-  background-color: #81b3d2;
-
-  overflow: hidden; /* Magic to prevent margin collapsing */ 
+.advantages p, h3 {
+  padding: 0;
+  margin: 0;
 }
-.advantages__first-line h3 {
-  width: 130px;
-  
-  text-align: center;
-  font-weight: bold;
-  font-size: 21px;
-}
-.advantages__first-line p {
-  width: 300px;
-}
-
-.advantages__second-line li {
-  width: 400px;
-  height: 330px;
-
-  background-color: #ffffff;
-}
-.advantages__second-line span {
-  display: block;
-
-  font-size: 21px;
-  line-height: 21px;
-  font-weight: bold;
-  color: #000000;
-}
-.advantages__second-line p {
-  width: 285px;
-
-  color: #333333;
-  line-height: 21px;
+.advantages__first-line,
+.advantages__second-line,
+.advantages__second-item {
+  display: flex;
 }
 .advantages__second-line li:nth-child(1) {
   background-image: url(../img/icon-house.svg);
-  background-position: 50% 25%;
+  background-position: 50% 23%;
   background-repeat: no-repeat;
 }
 .advantages__second-line li:nth-child(2) {
   background-image: url(../img/icon-burger.svg);
-  background-position: 50% 25%;
+  background-position: 50% 23%;
   background-repeat: no-repeat;
 }
 .advantages__second-line li:nth-child(3) {
   background-image: url(../img/icon-gift.svg);
-  background-position: 50% 25%;
+  background-position: 50% 23%;
   background-repeat: no-repeat;
 }
 
-/* Second item */ 
-.advantages__second-item h3 {
-  width: 155px;
+/* Advantages - Box */ 
+
+.advantages__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   
+  width: 400px;
+  min-height: 256px;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-bottom: 20px;
+  
+  line-height: 21px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Advantages - blue box */
+
+.advantages__box--blue {
+  padding-top: 46px;
+  
+  color: #ffffff;
+  background-color: #81b3d2;
+}
+.advantages__box--blue h3 {
+  width: 150px;
+  margin-bottom: 25px;
+
   font-weight: bold;
   font-size: 21px;
 }
+.advantages__box--blue span {
+  margin-bottom: 20px;
+  width: 300px;
+}
+.advantages__box--blue p {
+  width: 300px;
+}
+
+/* Advantages - white box */
+
+.advantages__box--white {
+  padding-top: 160px;
+  
+  min-height: 330px;
+  
+  background-color: #ffffff;
+}
+.advantages__box--white span {
+  display: block;
+  margin-bottom: 24px;
+  
+  width: 100%;
+
+  font-size: 21px;
+  font-weight: bold;
+  color: #000000;
+}
+.advantages__box--white p {
+  width: 300px;
+  
+  color: #333333;
+}
+
+/* Advantages - grey box */
+
+.advantages__box--grey  {
+  min-height: 256px;
+  
+  padding-top: 45px;
+  
+  color: #333333;
+  background-color: #eeeeee;
+}
+.advantages__box--grey  h3 {
+  margin-bottom: 26px;
+  width: 130px;
+  
+  font-weight: bold;
+  font-size: 21px;
+  color: #000000;
+}
+.advantages__box--grey span {
+  margin-bottom: 20px;
+  width: 260px;
+}
+.advantages__box--grey p {
+  width: 260px;
+}
+.advantages__box--grey:nth-child(5) p {
+  width: 250px;
+}
+
 .advantages__second-item p {
   width: 310px;
   
   text-align: center;
 }
 
-/* Last items */
-.advantages__last-items {
-  width: 400px;
-  height: 256px;
-  background-color: #eeeeee;
+/* Find a hotel section */
 
-  overflow: hidden; /* Magic to prevent margin collapsing */ 
-	/* overflow hidden removes li discs */ 
-}
-.advantages__last-items h3 {
-  width: 130px;
-  
-  text-align: center;
-  font-weight: bold;
-  font-size: 21px;
-  color: #000000;
-}
-.advantages__last-items span, 
-.advantages__last-items p {
-  width: 260px;
-  
-  text-align: center;
-  line-height: 21px;
-  color: #333333;
-}
-.advantages__last-items:nth-child(5) p {
-  width: 250px;
-}
-
-/* Find a hotel section + search button */
 .search__container {
   display: flex;
-  padding-top: 58px;
+  padding-top: 49px; 
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   
-  width: 1200px;
-  height: 291px;
+  min-height: 291px;
 
   text-align: center;
   
-  background-color: #ffffff;
-
-  overflow: hidden; /* Magic to prevent margin collapsing */ 
+  background-color: #ffffff; 
 }
 .search__container p:first-of-type {
-  margin-bottom: 38px;
+  margin-bottom: 24px;
+  
+  max-width: 800px;
 	
   font-size: 30px;
   line-height: 36px;
   font-weight: bold;
 }
 .search__container p:last-of-type {
-  margin-bottom: 54px;
+  margin-bottom: 48px;
+
+  max-width: 900px;
+
   line-height: 24px;
 
   color: #333333;
 }
-.search__container button {
+.search__form-wrapper > button {
   width: 568px;
-  height: 86px;
+  min-height: 86px;
+  
+  padding: 20px 30px;
 
   font-size: 21px;
   line-height: 26px;
@@ -381,34 +425,39 @@ button[type="button"].visually-hidden {
 
   background-color: #766357;
 }
-.search__container button:hover {
+.search__form-wrapper > button:hover {
   background-color: #604e43;
 }
-.search__container button:active {
+.search__form-wrapper > button:active {
   background-color: #503e33;
   color: rgba(256, 256, 256, 0.3);
 }
+.search__form-wrapper {
+  position: relative;
+  width: 568px;
+  margin: 0 auto;
+}
 
 /* FORM */
-.search {
-  width: 1200px;
-}
+
 .search fieldset {
   border: 0;
   padding: 0;
   margin: 0;
 }
 .search__form {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  padding: 55px 0;
   
-  padding-top: 55px;
-  
-  width: 568px;
+  width: 100%;
   min-height: 395px;
 
   font-weight: bold;
+  text-align: left;
 
   background-color: #ffffff;
   margin-left: auto;
@@ -424,13 +473,15 @@ button[type="button"].visually-hidden {
   justify-content: space-between;
 }
 .search__checkinout {
+  display: flex;
+  align-items: center;
   width: 458px;
 }
 .search__checkinout:nth-of-type(1) {
   margin-bottom: 29px;
 }
 .search__checkinout:nth-of-type(2) {
-  margin-bottom: 30px;
+  margin-bottom: 29px;
 }
 .search__form div:nth-of-type(3) {
   margin-bottom: 54px;
@@ -450,7 +501,7 @@ button[type="button"].visually-hidden {
   vertical-align: middle;
   color: #000000;
   text-transform: uppercase;
-
+  
   background-color: #f2f2f2;
   
   border: 0;
@@ -541,7 +592,9 @@ button[type="button"].visually-hidden {
 /* Find button */
 .search__find-button {
   width: 458px;
-  height: 58px;
+  min-height: 58px;
+  
+  padding: 15px 30px;
 
   font-size: 21px;
   line-height: 26px;
@@ -567,24 +620,59 @@ button[type="button"].visually-hidden {
   min-height: 473px;
 }
 
-/* Footer */ 
+/* Footer containers */ 
 
 .bottom {
   display: flex;
-  padding-left: 123px;
-  
-  justify-content: flex-start;
-  align-items: center;
+  padding-left: 72px;
+  padding-right: 72px;
+
   min-height: 120px;
   
   background-color: #fefefe;
 }
 .bottom__contacts {
-  margin-right: 178px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: center;
+  flex-shrink: 0;
+  
+  padding-left: 52px;
+  width: 310px;
   
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
+  
+}
+.bottom__social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; 
+  justify-content: center;
+  
+  padding-left: 60px;
+  padding-right: 60px;
+  
+  width: 100%;
+}
+.bottom__copy {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-end;
+  
+  padding-right: 29px;
+  
+  min-width: 310px; 	
+}
+
+/* Contacts style */ 
+
+.bottom__contacts p,
+.bottom__contacts a {
+  overflow-wrap: break-word;
+  width: 100%; /* Hack. Overflow-wrap must have width property of text container */ 
 }
 .bottom__contacts p {
   margin-bottom: 6px;
@@ -593,16 +681,8 @@ button[type="button"].visually-hidden {
 /* Social icons */ 
 
 .bottom__social li {
-  margin-right: 6px;
-}
-.bottom__social li:last-child {
-  margin-right: 0px;
-}
-.bottom__social {
-  margin-right: 178px;
-}
-.bottom__social-list {
-  display: flex;
+  margin-right: 3px;
+  margin-left: 3px;
 }
 .bottom__contacts a {
   color: #000000;
@@ -635,13 +715,17 @@ button[type="button"].visually-hidden {
 .bottom__copy svg {
   display: block;
 }
+.bottom__copy p {
+  min-width: 0px;
+  overflow-wrap: break-word;
+}
 .bottom__copy {
   display: flex;
   align-items: center;
 }
 .bottom__copy a {
   display: block;
-  padding-left: 20px;
+  padding-left: 8px;
 }
 .bottom__copy a {
   fill: #231f20;
@@ -661,55 +745,65 @@ button[type="button"].visually-hidden {
   max-width: 1200px;
   min-height: 217px;
 
+  padding: 28px 72px;
+
   background-image: url(../img/background-mountains--blur.jpg);
   background-position: 0 -56px; /* 56px - menu's line height ????*/
 }
 .horizontal-form {
   display: flex;
-  margin-left: 46px;
-  margin-right: 46px;
-  padding-top: 28px;
 
   line-height: 21px;
   color: #ffffff;
+}
+.horizontal-form legend {
+  letter-spacing: 0.1em; 
+  font-weight: bold;
+  display: block;
+  padding-right: 15px;
 }
 .horizontal-form fieldset {
   margin: 0;
   padding: 0;
   border: 0;  
 }
-.horizontal-form__column legend {
-  font-weight: bold;
-}
 .horizontal-form__column div,
 .horizontal-form__column legend {
   position: relative; 
-  min-width: 254px;
-  margin-bottom: 28px;
+  width: 254px;
+  margin-bottom: 24px;
+
+  overflow-wrap: break-word;
 }
 .horizontal-form__column div:last-of-type {
   margin-bottom: 0;
 }
 .horizontal-form__column-third {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin-left: auto;  
+
   font-weight: bold;
 }
 .horizontal-form__column-third legend {
-  margin-bottom: 12px;
+  width: 318px;
+
+  margin-bottom: 9px;
+  margin-right: 2px;
 }
 .horizontal-form__column-third > div {
-  min-width: 224px;
+  width: 318px;
 }
-.horizontal-form__column-third > div:last-child {
-  display: flex;
-  justify-content: flex-end;
-}
-
 /* Checkboxes */ 
 
 .horizontal-form__check-label {
   display: block;
   padding-left: 40px;
+  padding-right: 15px;
+}
+.horizontal-form__column:nth-last-of-type(2) .horizontal-form__check-label {
+  padding-left: 42px;
 }
 .horizontal-form__check-custom {
   position: absolute;
@@ -750,12 +844,12 @@ button[type="button"].visually-hidden {
 
 .horizontal-form___from-to {
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 
   justify-content: space-between;
   align-items: center;
   
-  width: 224px;
+  width: 100%;
   height: 36px;
 
   border: 2px solid #ffffff;
@@ -766,8 +860,11 @@ button[type="button"].visually-hidden {
   background-position: 50% 50%;
 }
 .horizontal-form__input {
-  min-width: 110px;
+  width: 100%;
   height: 15px;
+
+  padding-left: 15px;
+  padding-right: 15px;
 
   line-height: 21px;
   vertical-align: middle;
@@ -782,6 +879,7 @@ button[type="button"].visually-hidden {
 .range-container {
   display: flex;
   margin-bottom: 21px;
+  width: 317px;
 }
 
 /* --spaces */
@@ -790,14 +888,14 @@ button[type="button"].visually-hidden {
 }
 .range-container__space--left {
   margin-left: 14px;
-  width: 156px;
+  width: 252px;
   
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="156" height="2"%3E%3Crect width="156" height="2" fill="%23ffffff"%3E%3C/rect%3E%3C/svg%3E');
   background-position: 0% 50%;
   background-repeat: repeat-x;
 }
 .range-container__space--right {
-  width: 54px;
+  width: 65px;
 
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="156" height="2"%3E%3Crect width="156" height="2" fill="%23ffffff"%3E%3C/rect%3E%3C/svg%3E');
   background-position: 0% 50%;
@@ -814,12 +912,12 @@ button[type="button"].visually-hidden {
   background-size: cover;
 }
 .range-container__round--custom-l {
-  margin-left: 4px;
+  margin-left: 1px;
 
   background-image: url('../img/filter-button.svg');
 }
 .range-container__round--custom-r {
-  margin-left: 160px;
+  margin-left: 252px;
   z-index: 1;
 
   background-image: url('../img/filter-button.svg');
@@ -847,8 +945,11 @@ button[type="button"].visually-hidden {
 }
 .horizontal-form__show {
   display: block;
+  margin-left: 85px;
   width: 137px;
-  height: 36px;
+  min-height: 36px;
+  
+  padding: 0 15px;
   border: 2px solid #ffffff;
 
   line-height: 21px;
@@ -867,8 +968,13 @@ button[type="button"].visually-hidden {
 
 .sorting {
   display: flex;
+  align-items: center;
+  padding: 20px 72px;
+  
   width: 1200px;
   min-height: 86px; 
+
+  border-bottom: 1px solid #e5e5e5;
 
   color: #000000;
 
@@ -878,17 +984,33 @@ button[type="button"].visually-hidden {
   margin: 0;
 }
 .sorting p:first-of-type {
+  margin-right: 46px;
+  max-width: 175px;
+
   font-size: 21px;
   font-weight: bold;
 }
 .sorting p:last-of-type {
+  margin-right: 40px;
+  max-width: 150px;
+  
   font-size: 12px;
   line-height: 18px;
 }
-.sorting ul {
+.sorting__type-of {
   display: flex;
 }
+.sorting__type-of li {
+  margin-right: 33px;
+}
+.sorting__arrows {
+  display: flex;
+  
+  margin-left: auto;
+  margin-right: 1px;
+}
 .sorting__btn {
+  max-width: 120px;
   border-bottom: 1px dotted #81b3d2; 
   
   font-size: 12px;
@@ -966,19 +1088,26 @@ button[type="button"].visually-hidden {
 /* Output - hotel list items */
 
 .output {
-  border-top: 1px solid #e5e5e5;
-
   background-color: #fefefe;
 }
 .output li {
   display: flex;
   align-items: center;
   padding: 30px 72px;
+  padding-bottom: 30px;
 
   border-bottom: 1px solid #e5e5e5;
 }
 .output img {
   margin-right: 30px;
+}
+.output__wrapper-button-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 500px;
+  min-height: 90px;
 }
 .output__rating-container {
   display: flex;
@@ -990,33 +1119,36 @@ button[type="button"].visually-hidden {
   line-height: 0;
   font-size: 0;
 }
-.output__inform-container {
-  display: flex;
-  flex-direction: column;
-}
 
-/* Inform container - inner styles */ 
+/* output__wrapper-button-links - inner styles */ 
 
-.output__inform-container div {
+.output__type-price,
+.output__button-bundle {
   display: flex;
-  margin-bottom: 18px;
 }
-.output__inform-container div:last-of-type {
-  margin-bottom: 0;
-}
-.output__inform-container span:first-child {
-  margin-right: 39px;
-}
-.output__button-link {
+.output__type-price div {
+  display: flex;
   margin-right: 6px;
+  
+  width: 110px;
+
+  line-height: 21px;
 }
-.output__button-link:last-of-type {
-  margin-right: 0;
+.output__type-price div:last-child {
+  width: 142px;
+}
+.output__button-bundle div {
+  display: flex;
+  align-items: center;
+  margin-right: 6px;
+} 
+.output__wrapper-button-links h2 {
+  line-height: 17px;  
 }
 .output__heading-link {
   font-size: 21px;
   font-weight: bold;
-  line-height: 26px;
+  line-height: inherit;
   color: #000000;
 }
 .output__heading-link:hover {
@@ -1025,21 +1157,21 @@ button[type="button"].visually-hidden {
 .output__heading-link:active {
   color: rgba(0, 0, 0, 0.3);
 }
-.output span {
-  font-size: 14px;
-  line-height: 21px;
-  color: #333333;
-}
 .output__button-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
-  height: 27px;
+  width: 110px;
+  min-height: 27px;
+  
+  padding-left: 15px;
+  padding-right: 15px;
 
   font-size: 14px;
   line-height: 21px;
   font-weight: bold;
+  text-align: center;
+  
   color: #ffffff;
   background-color: #81b3d2;
 }
@@ -1063,21 +1195,22 @@ button[type="button"].visually-hidden {
 
 /* Rating container - inner styles */ 
 
-.output__rating-container span {
+.output__rating {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 1px;
-  width: 110px;
-  height: 27px;
+  min-width: 110px;
+  max-width: 200px;
+  min-height: 27px;
 
+  text-align: center;
   line-height: 21px;
   color: #666666;
 
   background-color: #f2f2f2;
 }
 .output__stars {
-  margin-bottom: 47px;
+  margin-bottom: 46px;
 }
 .output__stars img {
   margin-right: 6px;  
@@ -1085,6 +1218,8 @@ button[type="button"].visually-hidden {
 .output__stars img:last-child {
   margin-right: 0;
 }
-
-
-
+.output__rating {
+  font-size: 14px;
+  line-height: 21px;
+  color: #333333;
+}

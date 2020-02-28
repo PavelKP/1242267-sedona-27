@@ -15,7 +15,7 @@
         <ul class="list">
           <li><a href="info.html">Информация</a></li>
           <li><a href="gallery.html">Фото и видео</a></li>
-          <li><a href="map.html">Карта штата</a></li>
+          <li><a href="map.html">Карта <span class="wide-letter-spacing">штата</span></a></li>
           <li><a href="catalog.html">Гостиницы</a></li>
         </ul>
       </nav>
@@ -39,50 +39,50 @@
         <h2 class="visually-hidden">
           Преимущества
         </h2>
-        <ul class="advantages list"> <!-- flex container -->
-          <li class="advantages__first-item"> <!-- flex container-->
-            <div class="advantages__first-line"> <!-- flex item && flex container, width: 100% -->
-              <div> 
+        <ul class="advantages list"> 
+          <li>
+            <div class="advantages__first-line"> 
+              <div class="advantages__box advantages__box--blue"> 
                 <h3>Настоящий городок</h3>
                 <span>— №1 —</span>
                 <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
               </div>    
               <img src="img/building.jpg" width="800" height="256" alt="Фото здания в стиле дикого запада"> 
             </div>
-            <ul class="advantages__second-line list"> <!-- flex item && flex container, width: 100% -->
-              <li>
+            <ul class="advantages__second-line list">
+              <li class="advantages__box advantages__box--white">
                 <span>Жильё</span>
                 <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
               </li>
-              <li>
+              <li class="advantages__box advantages__box--white">
                 <span>Еда</span>
                 <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
               </li>
-              <li>
+              <li class="advantages__box advantages__box--white">
                 <span>Сувениры</span>
                 <p>Не только китайского, но и местного производства!</p>
               </li>
             </ul>
           </li>
-          <li class="advantages__second-item"> <!-- flex container -->
-            <div> <!-- flex item -->
+          <li class="advantages__second-item">            
+			<img src="img/devils-bridge.jpg" width="800" height="255" alt="ужасный мост Дьявола">  
+            <div class="advantages__box advantages__box--blue"> 
               <h3>Там есть Мост дьявола</h3>
               <span>— №2 —</span>
               <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
             </div>
-            <img src="img/devils-bridge.jpg" width="800" height="255" alt="ужасный мост Дьявола">  <!-- flex item -->
           </li> 
-          <li class="advantages__last-items"> <!-- flex item по отношению к ul, который тоже будет flex container??? -->
+          <li class="advantages__box advantages__box--grey"> 
             <h3>Небольшая площадь</h3>
             <span>— №3 —</span>
             <p>Все достопримечательности находятся очень близко</p>
           </li>
-          <li class="advantages__last-items">
+          <li class="advantages__box advantages__box--grey ">
             <h3>Красивая дорога</h3>                
             <span>— №4 —</span>
             <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
           </li>
-          <li class="advantages__last-items"> 
+          <li class="advantages__box advantages__box--grey "> 
             <h3>Мало туристов</h3>
             <span>— №5 —</span>
             <p>Большинство едет в гранд каньон и толпится там</p>
@@ -101,82 +101,83 @@
             Укажите предполагаемые даты поездки, <br>
             и мы покажем вам лучшие предложения гостиниц в седоне
           </p>
-          <button class="button-reset" type="button">
-            <span>
+
+          <div class="search__form-wrapper">
+            <button class="button-reset" type="button">
               Поиск гостиницы в Седоне
-            </span>
-          </button>
-        </div>
-        <form class="search__form" action="https://echo.htmlacademy.ru" method="get">
-          <fieldset>
-            <legend class="visually-hidden">Параметры ддя поиска:</legend>
-            <div class="search__checkinout">
-              <label for="arrival-id">Дата заезда:</label>
-              <input class="placeholder-black" id="arrival-id" type="text" name="arrival-date" placeholder="24 апреля 2017">
-              <button class="button-reset" type="button">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  width="21px" height="22px" viewBox="0 0 21 22" enable-background="new 0 0 21 22" xml:space="preserve">
-                    <path d="M19.251,2.025h-2.845V0.648c0-0.381-0.294-0.689-0.656-0.689c-0.363,0-0.656,0.308-0.656,0.689v1.377h-3.938V0.648
+            </button>
+            <form class="search__form" action="https://echo.htmlacademy.ru" method="get">
+              <fieldset>
+                <legend class="visually-hidden">Параметры ддя поиска:</legend>
+                <div class="search__checkinout">
+                  <label for="arrival-id">Дата заезда:</label>
+                  <input class="placeholder-black" id="arrival-id" type="text" name="arrival-date" placeholder="24 апреля 2017">
+                  <button class="button-reset" type="button">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      width="21px" height="22px" viewBox="0 0 21 22" enable-background="new 0 0 21 22" xml:space="preserve">
+                        <path d="M19.251,2.025h-2.845V0.648c0-0.381-0.294-0.689-0.656-0.689c-0.363,0-0.656,0.308-0.656,0.689v1.377h-3.938V0.648
+                          c0-0.381-0.294-0.689-0.655-0.689c-0.363,0-0.657,0.308-0.657,0.689v1.377H5.906V0.648c0-0.381-0.294-0.689-0.656-0.689
+                          c-0.363,0-0.657,0.308-0.657,0.689v1.377H1.75C0.784,2.025,0,2.847,0,3.862v16.302C0,21.179,0.784,22,1.75,22h17.501
+                          C20.217,22,21,21.179,21,20.164V3.862C21,2.847,20.217,2.025,19.251,2.025z M19.688,20.164c0,0.253-0.195,0.459-0.437,0.459H1.75
+                          c-0.241,0-0.438-0.206-0.438-0.459V3.862c0-0.253,0.196-0.459,0.438-0.459h2.844v1.378c0,0.381,0.294,0.689,0.657,0.689
+                          c0.362,0,0.656-0.308,0.656-0.689V3.403h3.938v1.378c0,0.381,0.294,0.689,0.657,0.689c0.361,0,0.655-0.308,0.655-0.689V3.403h3.938
+                          v1.378c0,0.381,0.293,0.689,0.656,0.689c0.362,0,0.656-0.308,0.656-0.689V3.403h2.845c0.241,0,0.437,0.206,0.437,0.459V20.164z"/>
+                        <rect x="4.594" y="8.225" width="2.625" height="2.066"/>
+                        <rect x="4.594" y="11.668" width="2.625" height="2.067"/>
+                        <rect x="4.594" y="15.112" width="2.625" height="2.066"/>
+                        <rect x="9.188" y="15.112" width="2.625" height="2.066"/>
+                        <rect x="9.188" y="11.668" width="2.625" height="2.067"/>
+                        <rect x="9.188" y="8.225" width="2.625" height="2.066"/>
+                        <rect x="13.781" y="15.112" width="2.625" height="2.066"/>
+                        <rect x="13.781" y="11.668" width="2.625" height="2.067"/>
+                        <rect x="13.781" y="8.225" width="2.625" height="2.066"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="search__checkinout">
+                  <label for="departure-id">Дата выезда:</label>
+                  <input class="placeholder-black" id="departure-id" type="text" name="departure-date" placeholder="4 июля 2017">
+                  <button class="button-reset" type="button">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      width="21px" height="22px" viewBox="0 0 21 22" enable-background="new 0 0 21 22" xml:space="preserve">
+                      <path d="M19.251,2.025h-2.845V0.648c0-0.381-0.294-0.689-0.656-0.689c-0.363,0-0.656,0.308-0.656,0.689v1.377h-3.938V0.648
                       c0-0.381-0.294-0.689-0.655-0.689c-0.363,0-0.657,0.308-0.657,0.689v1.377H5.906V0.648c0-0.381-0.294-0.689-0.656-0.689
                       c-0.363,0-0.657,0.308-0.657,0.689v1.377H1.75C0.784,2.025,0,2.847,0,3.862v16.302C0,21.179,0.784,22,1.75,22h17.501
                       C20.217,22,21,21.179,21,20.164V3.862C21,2.847,20.217,2.025,19.251,2.025z M19.688,20.164c0,0.253-0.195,0.459-0.437,0.459H1.75
                       c-0.241,0-0.438-0.206-0.438-0.459V3.862c0-0.253,0.196-0.459,0.438-0.459h2.844v1.378c0,0.381,0.294,0.689,0.657,0.689
                       c0.362,0,0.656-0.308,0.656-0.689V3.403h3.938v1.378c0,0.381,0.294,0.689,0.657,0.689c0.361,0,0.655-0.308,0.655-0.689V3.403h3.938
                       v1.378c0,0.381,0.293,0.689,0.656,0.689c0.362,0,0.656-0.308,0.656-0.689V3.403h2.845c0.241,0,0.437,0.206,0.437,0.459V20.164z"/>
-                    <rect x="4.594" y="8.225" width="2.625" height="2.066"/>
-                    <rect x="4.594" y="11.668" width="2.625" height="2.067"/>
-                    <rect x="4.594" y="15.112" width="2.625" height="2.066"/>
-                    <rect x="9.188" y="15.112" width="2.625" height="2.066"/>
-                    <rect x="9.188" y="11.668" width="2.625" height="2.067"/>
-                    <rect x="9.188" y="8.225" width="2.625" height="2.066"/>
-                    <rect x="13.781" y="15.112" width="2.625" height="2.066"/>
-                    <rect x="13.781" y="11.668" width="2.625" height="2.067"/>
-                    <rect x="13.781" y="8.225" width="2.625" height="2.066"/>
-                </svg>
-              </button>
-            </div>
-            <div class="search__checkinout">
-              <label for="departure-id">Дата выезда:</label>
-              <input class="placeholder-black" id="departure-id" type="text" name="departure-date" placeholder="4 июля 2017">
-              <button class="button-reset" type="button">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  width="21px" height="22px" viewBox="0 0 21 22" enable-background="new 0 0 21 22" xml:space="preserve">
-                  <path d="M19.251,2.025h-2.845V0.648c0-0.381-0.294-0.689-0.656-0.689c-0.363,0-0.656,0.308-0.656,0.689v1.377h-3.938V0.648
-                  c0-0.381-0.294-0.689-0.655-0.689c-0.363,0-0.657,0.308-0.657,0.689v1.377H5.906V0.648c0-0.381-0.294-0.689-0.656-0.689
-                  c-0.363,0-0.657,0.308-0.657,0.689v1.377H1.75C0.784,2.025,0,2.847,0,3.862v16.302C0,21.179,0.784,22,1.75,22h17.501
-                  C20.217,22,21,21.179,21,20.164V3.862C21,2.847,20.217,2.025,19.251,2.025z M19.688,20.164c0,0.253-0.195,0.459-0.437,0.459H1.75
-                  c-0.241,0-0.438-0.206-0.438-0.459V3.862c0-0.253,0.196-0.459,0.438-0.459h2.844v1.378c0,0.381,0.294,0.689,0.657,0.689
-                  c0.362,0,0.656-0.308,0.656-0.689V3.403h3.938v1.378c0,0.381,0.294,0.689,0.657,0.689c0.361,0,0.655-0.308,0.655-0.689V3.403h3.938
-                  v1.378c0,0.381,0.293,0.689,0.656,0.689c0.362,0,0.656-0.308,0.656-0.689V3.403h2.845c0.241,0,0.437,0.206,0.437,0.459V20.164z"/>
-                    <rect x="4.594" y="8.225" width="2.625" height="2.066"/>
-                    <rect x="4.594" y="11.668" width="2.625" height="2.067"/>
-                    <rect x="4.594" y="15.112" width="2.625" height="2.066"/>
-                    <rect x="9.188" y="15.112" width="2.625" height="2.066"/>
-                    <rect x="9.188" y="11.668" width="2.625" height="2.067"/>
-                    <rect x="9.188" y="8.225" width="2.625" height="2.066"/>
-                    <rect x="13.781" y="15.112" width="2.625" height="2.066"/>
-                    <rect x="13.781" y="11.668" width="2.625" height="2.067"/>
-                    <rect x="13.781" y="8.225" width="2.625" height="2.066"/>
-                </svg>
-              </button>
-            </div>
-            <div>
-              <div class="search__number">
-                <label for="adults-id">Взрослые:</label>
-                <button class="decrement button-reset" type="button">-</button>
-                <input class="remove-arrows placeholder-black" id="adults-id" type="number" name="adults-num" placeholder="2" min="0">
-                <button class="increment button-reset" type="button">+</button>
-              </div>
-              <div class="search__number">
-                <label for="children-id">Дети:</label>
-                <button class="decrement button-reset" type="button">-</button>
-                <input class="remove-arrows placeholder-black" id="children-id" type="number" name="children-num" placeholder="0" min="0">
-                <button class="increment button-reset" type="button">+</button>
-              </div>
-            </div>
-          </fieldset>
-          <button class="search__find-button button-reset" type="submit">Найти</button>
-        </form>
+                        <rect x="4.594" y="8.225" width="2.625" height="2.066"/>
+                        <rect x="4.594" y="11.668" width="2.625" height="2.067"/>
+                        <rect x="4.594" y="15.112" width="2.625" height="2.066"/>
+                        <rect x="9.188" y="15.112" width="2.625" height="2.066"/>
+                        <rect x="9.188" y="11.668" width="2.625" height="2.067"/>
+                        <rect x="9.188" y="8.225" width="2.625" height="2.066"/>
+                        <rect x="13.781" y="15.112" width="2.625" height="2.066"/>
+                        <rect x="13.781" y="11.668" width="2.625" height="2.067"/>
+                        <rect x="13.781" y="8.225" width="2.625" height="2.066"/>
+                    </svg>
+                  </button>
+                </div>
+                <div>
+                  <div class="search__number">
+                    <label for="adults-id">Взрослые:</label>
+                    <button class="decrement button-reset" type="button">-</button>
+                    <input class="remove-arrows placeholder-black" id="adults-id" type="number" name="adults-num" placeholder="2" min="0">
+                    <button class="increment button-reset" type="button">+</button>
+                  </div>
+                  <div class="search__number">
+                    <label for="children-id">Дети:</label>
+                    <button class="decrement button-reset" type="button">-</button>
+                    <input class="remove-arrows placeholder-black" id="children-id" type="number" name="children-num" placeholder="0" min="0">
+                    <button class="increment button-reset" type="button">+</button>
+                  </div>
+                </div>
+              </fieldset>
+              <button class="search__find-button button-reset" type="submit">Найти</button>
+            </form>
+          </div>
+        </div>
       </section>
       <section class="map">
         <h2 class="visually-hidden">Карта Седоны</h2>
@@ -187,41 +188,39 @@
         <p class="button-reset">#visitSEDONA</p>
         <a href="tel:+74956660266">Тел: +7(495) 666-02-66</a>
       </div>
-      <div class="bottom__social">
-        <ul class="bottom__social-list list">
-          <li>
-            <a href="https://twitter.com">
-              <span class="visually-hidden">Twitter</span>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17px" height="15px" viewBox="0 0 17 15" enable-background="new 0 0 17 15" xml:space="preserve">
-                <path d="M10.95,0.144c1.685-0.496,2.984,0.27,3.577,1.179c0.673-0.231,1.331-0.481,2.011-0.708
-                c-0.004,0.861-0.522,1.513-0.857,1.768c0.685,0.17,1.304-0.491,1.304-0.491c-0.169,1-1.006,1.788-1.563,2.024
-                c-0.231,6.75-3.175,11.217-10.077,11.082c-0.522,0,0.075,0-0.446,0c-0.41,0-4.164-0.46-4.898-1.887
-                c2.271,0.196,3.893-0.422,4.693-1.177c-0.96-0.3-2.679-0.477-2.979-2.95C2.064,9.09,2.279,9.212,2.905,9.103
-                C1.705,8.247,0.374,7.53,0.448,5.33c0.285,0.328,1.067,0.536,1.34,0.472c-0.703-0.241-1.97-3.36-0.894-4.952
-                c1.818,1.854,3.735,3.606,7.152,3.773C8.254,2.33,9.183,0.793,10.95,0.144z"/>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com">
-              <span class="visually-hidden">Facebook</span>
-              <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              width="12px" height="22px" viewBox="0 0 12 22" enable-background="new 0 0 12 22" xml:space="preserve">
-                <path d="M12,4V0H8C5.791,0,4,1.791,4,4v4H0v4h4v10h4V12h4V8H8V4H12z"/>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com">
-              <span class="visually-hidden">YouTube</span>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              width="20px" height="16px" viewBox="0 0 20 16" enable-background="new 0 0 20 16" xml:space="preserve">
-                <path d="M17,0H3C1.35,0,0,1.35,0,3v10c0,1.65,1.35,3,3,3h14c1.65,0,3-1.35,3-3V3C20,1.35,18.65,0,17,0zM6.027,11.998V4.002L15.014,8L6.027,11.998z"/>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
+      <ul class="bottom__social list">
+        <li>
+        <a href="https://twitter.com">
+          <span class="visually-hidden">Twitter</span>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17px" height="15px" viewBox="0 0 17 15" enable-background="new 0 0 17 15" xml:space="preserve">
+          <path d="M10.95,0.144c1.685-0.496,2.984,0.27,3.577,1.179c0.673-0.231,1.331-0.481,2.011-0.708
+          c-0.004,0.861-0.522,1.513-0.857,1.768c0.685,0.17,1.304-0.491,1.304-0.491c-0.169,1-1.006,1.788-1.563,2.024
+          c-0.231,6.75-3.175,11.217-10.077,11.082c-0.522,0,0.075,0-0.446,0c-0.41,0-4.164-0.46-4.898-1.887
+          c2.271,0.196,3.893-0.422,4.693-1.177c-0.96-0.3-2.679-0.477-2.979-2.95C2.064,9.09,2.279,9.212,2.905,9.103
+          C1.705,8.247,0.374,7.53,0.448,5.33c0.285,0.328,1.067,0.536,1.34,0.472c-0.703-0.241-1.97-3.36-0.894-4.952
+          c1.818,1.854,3.735,3.606,7.152,3.773C8.254,2.33,9.183,0.793,10.95,0.144z"/>
+          </svg>
+        </a>
+        </li>
+        <li>
+        <a href="https://www.facebook.com">
+          <span class="visually-hidden">Facebook</span>
+          <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="12px" height="22px" viewBox="0 0 12 22" enable-background="new 0 0 12 22" xml:space="preserve">
+          <path d="M12,4V0H8C5.791,0,4,1.791,4,4v4H0v4h4v10h4V12h4V8H8V4H12z"/>
+          </svg>
+        </a>
+        </li>
+        <li>
+        <a href="https://www.youtube.com">
+          <span class="visually-hidden">YouTube</span>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="20px" height="16px" viewBox="0 0 20 16" enable-background="new 0 0 20 16" xml:space="preserve">
+          <path d="M17,0H3C1.35,0,0,1.35,0,3v10c0,1.65,1.35,3,3,3h14c1.65,0,3-1.35,3-3V3C20,1.35,18.65,0,17,0zM6.027,11.998V4.002L15.014,8L6.027,11.998z"/>
+          </svg>
+        </a>
+        </li>
+      </ul>
       <div class="bottom__copy">
         <p class="button-reset">Website by</p>
         <a href="https://htmlacademy.ru/intensive/htmlcss">

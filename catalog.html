@@ -16,8 +16,8 @@
         <ul class="list">
           <li><a href="info.html">Информация</a></li>
           <li><a href="gallery.html">Фото и видео</a></li>
-          <li><a href="map.html">Карта штата</a></li>
-          <li class="current">Гостиницы</li>
+          <li><a href="map.html">Карта <span class="wide-letter-spacing">штата</span></a></li>
+          <li class="current"><span>Гостиницы</span></li>
         </ul>
       </nav>
     </header>
@@ -85,16 +85,14 @@
                 </div>
               </fieldset>
             </div>
-            <div>
-              <button class="horizontal-form__show button-reset" type="submit">Показать</button>
-            </div>
+            <button class="horizontal-form__show button-reset" type="submit">Показать</button>
           </div>
         </form>
       </div>
       <div class ="sorting">
         <p>Найдено: 3</p>
         <p>Сортировка:</p>
-        <ul class="list">
+        <ul class="sorting__type-of list">
           <li>
             <button class="sorting__btn sorting__btn--current button-reset">по цене</button>
           </li>
@@ -104,6 +102,8 @@
           <li>
             <button class="sorting__btn button-reset">по рейтингу</button>
           </li>
+        </ul>
+        <ul class="sorting__arrows list">
           <li class="sorting__choose-order">
             <button class="sorting__up button-reset" type="button">
               <span class="visually-hidden">Вверх</span>
@@ -117,42 +117,29 @@
       <ul class="output list">
         <li>
           <img src="img/preview-amara.jpg" width="135" height="90" alt="Фото отеля Amara Resort & Spa">
-          <div class="output__inform-container">
+          <div class="output__wrapper-button-links">
             <h2 class="button-reset">
               <a class="output__heading-link" href="hotel-info.html">Amara Resort & Spa</a>
             </h2>
-            <div> 
-              <span>Гостиница</span>
-              <span>От 4000 р.</span>
+            <div class="output__type-price">
+              <div>
+              <p class="overflow-wrapper">Гостиница</p>
+              </div>
+              <div>
+              <p class="overflow-wrapper">От 4000 р.</p>
+              </div>
             </div>
-            <div>
-              <a class="output__button-link" href="hotel-view.html">Подробнее</a>
-              <a class="output__button-link output__button-link--brown" href="booking.html">Забронировать</a>
-            </div>
-          </div>
-          <div class="output__rating-container">
-            <div class="output__stars">
-              <img src="img/icon-star.svg" width="18" height="17" alt="rating star">
-              <img src="img/icon-star.svg" width="18" height="17" alt="rating star">
-              <img src="img/icon-star.svg" width="18" height="17" alt="rating star">
-              <img src="img/icon-star.svg" width="18" height="17" alt="rating star">
-            </div>
-            <span>Рейтинг: 8,5</span>
-          </div>
-        </li>
-        <li>          
-          <img src="img/preview-desert.jpg" width="135" height="90" alt="Фото отеля Desert Quail Inn">
-          <div class="output__inform-container">
-            <h2 class="button-reset">
-              <a class="output__heading-link" href="hotel-info.html">Desert Quail Inn</a>
-            </h2>
-            <div>
-              <span>Мотель</span>
-              <span>От 3000 р.</span>
-            </div>
-            <div>
-              <a class="output__button-link" href="hotel-view.html">Подробнее</a>
-              <a class="output__button-link output__button-link--brown" href="booking.html">Забронировать</a>
+            <div class="output__button-bundle">
+              <div>
+                <a class="output__button-link" href="hotel-view.html">
+                  <p class="overflow-wrapper">Подробнее</p>
+                </a>
+              </div>
+              <div>
+                <a class="output__button-link output__button-link--brown" href="booking.html">
+                <p class="overflow-wrapper">Забронировать</p>
+              </a>
+              </div>
             </div>
           </div>
           <div class="output__rating-container">
@@ -160,23 +147,76 @@
               <img src="img/icon-star.svg" width="18" height="17" alt="rating star">
               <img src="img/icon-star.svg" width="18" height="17" alt="rating star">
               <img src="img/icon-star.svg" width="18" height="17" alt="rating star">
+              <img src="img/icon-star.svg" width="18" height="17" alt="rating star">
             </div>
-            <span>Рейтинг: 8,9</span>
+            <div class="output__rating">
+              <p class="overflow-wrapper">Рейтинг: 8,5</p>
+            </div>
           </div>
         </li>
         <li>
-          <img src="img/preview-villas.jpg" width="135" height="90" alt="Фото отеля Desert Quail Inn">
-          <div class="output__inform-container">
+          <img src="img/preview-desert.jpg" width="135" height="90" alt="Фото отеля Desert Quail Inn">
+          <div class="output__wrapper-button-links">
+            <h2 class="button-reset">
+              <a class="output__heading-link" href="hotel-info.html">Desert Quail Inn</a>
+            </h2>
+            <div class="output__type-price">
+              <div>
+              <p class="overflow-wrapper">Мотель</p>
+              </div>
+              <div>
+              <p class="overflow-wrapper">От 3000 р.</p>
+              </div>
+            </div>
+            <div class="output__button-bundle">
+              <div>
+                <a class="output__button-link" href="hotel-view.html">
+                  <p class="overflow-wrapper">Подробнее</p>
+                </a>
+              </div>
+              <div>
+                <a class="output__button-link output__button-link--brown" href="booking.html">
+                <p class="overflow-wrapper">Забронировать</p>
+              </a>
+              </div>
+            </div>
+          </div>
+          <div class="output__rating-container">
+            <div class="output__stars">
+              <img src="img/icon-star.svg" width="18" height="17" alt="rating star">
+              <img src="img/icon-star.svg" width="18" height="17" alt="rating star">
+              <img src="img/icon-star.svg" width="18" height="17" alt="rating star">
+            </div>
+            <div class="output__rating">
+              <p class="overflow-wrapper">Рейтинг: 8,9</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <img src="img/preview-villas.jpg" width="135" height="90" alt="Фото отеля Villas at Poco Diablo">
+          <div class="output__wrapper-button-links">
             <h2 class="button-reset">
               <a class="output__heading-link" href="hotel-info.html">Villas at Poco Diablo</a>
             </h2>
-            <div>
-              <span>Апартаменты</span>
-              <span>От 2000 р.</span>
+            <div class="output__type-price">
+              <div>
+              <p class="overflow-wrapper">Апартаменты</p>
+              </div>
+              <div>
+              <p class="overflow-wrapper">От 2000 р.</p>
+              </div>
             </div>
-            <div>
-              <a class="output__button-link" href="hotel-view.html">Подробнее</a>
-              <a class="output__button-link output__button-link--brown" href="booking.html">Забронировать</a>
+            <div class="output__button-bundle">
+              <div>
+                <a class="output__button-link" href="hotel-view.html">
+                  <p class="overflow-wrapper">Подробнее</p>
+                </a>
+              </div>
+              <div>
+                <a class="output__button-link output__button-link--brown" href="booking.html">
+                <p class="overflow-wrapper">Забронировать</p>
+              </a>
+              </div>
             </div>
           </div>
           <div class="output__rating-container">
@@ -184,7 +224,9 @@
               <img src="img/icon-star.svg" width="18" height="17" alt="rating star">
               <img src="img/icon-star.svg" width="18" height="17" alt="rating star">
             </div>
-            <span>Рейтинг: 9,2</span>
+            <div class="output__rating">
+              <p class="overflow-wrapper">Рейтинг: 9,2</p>
+            </div>
           </div>
         </li>
       </ul>
@@ -194,41 +236,39 @@
         <p class="button-reset">#visitSEDONA</p>
         <a href="tel:+74956660266">Тел: +7(495) 666-02-66</a>
       </div>
-      <div class="bottom__social">
-        <ul class="bottom__social-list list">
-          <li>
-            <a href="https://twitter.com">
-              <span class="visually-hidden">Twitter</span>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17px" height="15px" viewBox="0 0 17 15" enable-background="new 0 0 17 15" xml:space="preserve">
-                <path d="M10.95,0.144c1.685-0.496,2.984,0.27,3.577,1.179c0.673-0.231,1.331-0.481,2.011-0.708
-                c-0.004,0.861-0.522,1.513-0.857,1.768c0.685,0.17,1.304-0.491,1.304-0.491c-0.169,1-1.006,1.788-1.563,2.024
-                c-0.231,6.75-3.175,11.217-10.077,11.082c-0.522,0,0.075,0-0.446,0c-0.41,0-4.164-0.46-4.898-1.887
-                c2.271,0.196,3.893-0.422,4.693-1.177c-0.96-0.3-2.679-0.477-2.979-2.95C2.064,9.09,2.279,9.212,2.905,9.103
-                C1.705,8.247,0.374,7.53,0.448,5.33c0.285,0.328,1.067,0.536,1.34,0.472c-0.703-0.241-1.97-3.36-0.894-4.952
-                c1.818,1.854,3.735,3.606,7.152,3.773C8.254,2.33,9.183,0.793,10.95,0.144z"/>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com">
-              <span class="visually-hidden">Facebook</span>
-              <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              width="12px" height="22px" viewBox="0 0 12 22" enable-background="new 0 0 12 22" xml:space="preserve">
-                <path d="M12,4V0H8C5.791,0,4,1.791,4,4v4H0v4h4v10h4V12h4V8H8V4H12z"/>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com">
-              <span class="visually-hidden">YouTube</span>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              width="20px" height="16px" viewBox="0 0 20 16" enable-background="new 0 0 20 16" xml:space="preserve">
-                <path d="M17,0H3C1.35,0,0,1.35,0,3v10c0,1.65,1.35,3,3,3h14c1.65,0,3-1.35,3-3V3C20,1.35,18.65,0,17,0zM6.027,11.998V4.002L15.014,8L6.027,11.998z"/>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
+      <ul class="bottom__social list">
+        <li>
+        <a href="https://twitter.com">
+          <span class="visually-hidden">Twitter</span>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17px" height="15px" viewBox="0 0 17 15" enable-background="new 0 0 17 15" xml:space="preserve">
+          <path d="M10.95,0.144c1.685-0.496,2.984,0.27,3.577,1.179c0.673-0.231,1.331-0.481,2.011-0.708
+          c-0.004,0.861-0.522,1.513-0.857,1.768c0.685,0.17,1.304-0.491,1.304-0.491c-0.169,1-1.006,1.788-1.563,2.024
+          c-0.231,6.75-3.175,11.217-10.077,11.082c-0.522,0,0.075,0-0.446,0c-0.41,0-4.164-0.46-4.898-1.887
+          c2.271,0.196,3.893-0.422,4.693-1.177c-0.96-0.3-2.679-0.477-2.979-2.95C2.064,9.09,2.279,9.212,2.905,9.103
+          C1.705,8.247,0.374,7.53,0.448,5.33c0.285,0.328,1.067,0.536,1.34,0.472c-0.703-0.241-1.97-3.36-0.894-4.952
+          c1.818,1.854,3.735,3.606,7.152,3.773C8.254,2.33,9.183,0.793,10.95,0.144z"/>
+          </svg>
+        </a>
+        </li>
+        <li>
+        <a href="https://www.facebook.com">
+          <span class="visually-hidden">Facebook</span>
+          <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="12px" height="22px" viewBox="0 0 12 22" enable-background="new 0 0 12 22" xml:space="preserve">
+          <path d="M12,4V0H8C5.791,0,4,1.791,4,4v4H0v4h4v10h4V12h4V8H8V4H12z"/>
+          </svg>
+        </a>
+        </li>
+        <li>
+        <a href="https://www.youtube.com">
+          <span class="visually-hidden">YouTube</span>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="20px" height="16px" viewBox="0 0 20 16" enable-background="new 0 0 20 16" xml:space="preserve">
+          <path d="M17,0H3C1.35,0,0,1.35,0,3v10c0,1.65,1.35,3,3,3h14c1.65,0,3-1.35,3-3V3C20,1.35,18.65,0,17,0zM6.027,11.998V4.002L15.014,8L6.027,11.998z"/>
+          </svg>
+        </a>
+        </li>
+      </ul>
       <div class="bottom__copy">
         <p class="button-reset">Website by</p>
         <a href="https://htmlacademy.ru/intensive/htmlcss">
