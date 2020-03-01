@@ -15,7 +15,7 @@
         <ul class="list">
           <li><a href="info.html">Информация</a></li>
           <li><a href="gallery.html">Фото и видео</a></li>
-          <li><a href="map.html">Карта <span class="wide-letter-spacing">штата</span></a></li>
+          <li><a href="map.html">Карта штата</a></li>
           <li><a href="catalog.html">Гостиницы</a></li>
         </ul>
       </nav>
@@ -101,9 +101,8 @@
             Укажите предполагаемые даты поездки, <br>
             и мы покажем вам лучшие предложения гостиниц в седоне
           </p>
-
           <div class="search__form-wrapper">
-            <button class="button-reset" type="button">
+            <button class="button-reset" aria-label="Показать/скрыть форму" type="button">
               Поиск гостиницы в Седоне
             </button>
             <form class="search__form" action="https://echo.htmlacademy.ru" method="get">
@@ -112,7 +111,7 @@
                 <div class="search__checkinout">
                   <label for="arrival-id">Дата заезда:</label>
                   <input class="placeholder-black" id="arrival-id" type="text" name="arrival-date" placeholder="24 апреля 2017">
-                  <button class="button-reset" type="button">
+                  <button class="button-reset" aria-label="Выбрать дату заезда в календаре" type="button">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                       width="21px" height="22px" viewBox="0 0 21 22" enable-background="new 0 0 21 22" xml:space="preserve">
                         <path d="M19.251,2.025h-2.845V0.648c0-0.381-0.294-0.689-0.656-0.689c-0.363,0-0.656,0.308-0.656,0.689v1.377h-3.938V0.648
@@ -137,7 +136,7 @@
                 <div class="search__checkinout">
                   <label for="departure-id">Дата выезда:</label>
                   <input class="placeholder-black" id="departure-id" type="text" name="departure-date" placeholder="4 июля 2017">
-                  <button class="button-reset" type="button">
+                  <button class="button-reset" aria-label="Выбрать дату выезда в календаре" type="button">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                       width="21px" height="22px" viewBox="0 0 21 22" enable-background="new 0 0 21 22" xml:space="preserve">
                       <path d="M19.251,2.025h-2.845V0.648c0-0.381-0.294-0.689-0.656-0.689c-0.363,0-0.656,0.308-0.656,0.689v1.377h-3.938V0.648
@@ -162,15 +161,15 @@
                 <div>
                   <div class="search__number">
                     <label for="adults-id">Взрослые:</label>
-                    <button class="decrement button-reset" type="button">-</button>
+                    <button class="decrement button-reset" aria-label="Уменьшить количество взрослых" type="button">-</button>
                     <input class="remove-arrows placeholder-black" id="adults-id" type="number" name="adults-num" placeholder="2" min="0">
-                    <button class="increment button-reset" type="button">+</button>
+                    <button class="increment button-reset" aria-label="Увеличить количество взрослых" type="button">+</button>
                   </div>
                   <div class="search__number">
                     <label for="children-id">Дети:</label>
-                    <button class="decrement button-reset" type="button">-</button>
+                    <button class="decrement button-reset" aria-label="Уменьшить количество детей" type="button">-</button>
                     <input class="remove-arrows placeholder-black" id="children-id" type="number" name="children-num" placeholder="0" min="0">
-                    <button class="increment button-reset" type="button">+</button>
+                    <button class="increment button-reset" aria-label="Увеличить количество детей" type="button">+</button>
                   </div>
                 </div>
               </fieldset>
@@ -186,7 +185,7 @@
     <footer class="bottom">
       <div class="bottom__contacts">
         <p class="button-reset">#visitSEDONA</p>
-        <a href="tel:+74956660266">Тел: +7(495) 666-02-66</a>
+        <a href="tel:+74956660266" aria-label="Телефон компании">Тел: +7(495) 666-02-66</a>
       </div>
       <ul class="bottom__social list">
         <li>

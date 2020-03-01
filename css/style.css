@@ -50,16 +50,15 @@ a {
   margin: 0;
   border: 0;
 }
-.wide-letter-spacing {
-  letter-spacing: 0.1em;
-}
 p.overflow-wrapper {
+  
   width: 100%;
   margin: 0;
   padding: 0;
 
-  overflow-wrap: break-word;
+  outline: 1px solid red;
 }
+
 
 /* remove increment arrows */
 /* -- chrome */
@@ -117,7 +116,24 @@ button[type="button"].visually-hidden {
 .bottom {
 	width: 1200px;
 	margin-left: auto;
-	margin-right: auto;
+  margin-right: auto;
+  
+  position: relative;
+}
+
+/* Shadow */
+.header::before,
+.main-container::before,
+.bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1; /* lowest layer, hides top shadow under other blocks */
+
+  box-shadow: 0px 0px 15px 0 rgba(0, 1, 1, 0.2);
 }
 
 /* Header */
@@ -185,39 +201,28 @@ button[type="button"].visually-hidden {
   position: absolute;
   left: 50%;
   margin-left: -70px;
+  z-index: 1;
 }
 .header__navigation ul {
   display: flex;  
-  flex-wrap: wrap;  
-  flex-shrink: 0;
+  flex-wrap: wrap; 
+  align-items: center;
 
   width: 1200px;
 
   background-color: #ffffff;
 }
-.header__navigation li {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  flex-wrap: wrap;
-  
+.header__navigation li {  
   padding-left: 72px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   width: 240px; 
   min-height: 56px;
   
   color: #000000;
   font-weight: bold;
 }
-.header__navigation a,
-.current span {
-  /* word-break: break-all; - fallback for old IEs, but it works instead of overflow-wrap! */
-  overflow-wrap: break-word;
-  min-width: 0px; /* Hack. Overflow-wrap must have width property of text container. <a> doesn't, but with min-width: 0 or width: 100% <a> takes
-                      width from parent */
-                  /* Overflow-wrap doesn't work with display flex */
-}
+
 .header__navigation li:nth-child(4n+3) {
   margin-left: 240px;
   padding-left: 79px;
@@ -671,7 +676,7 @@ button[type="button"].visually-hidden {
 
 .bottom__contacts p,
 .bottom__contacts a {
-  overflow-wrap: break-word;
+ /* overflow-wrap: break-word;*/
   width: 100%; /* Hack. Overflow-wrap must have width property of text container */ 
 }
 .bottom__contacts p {
@@ -717,7 +722,7 @@ button[type="button"].visually-hidden {
 }
 .bottom__copy p {
   min-width: 0px;
-  overflow-wrap: break-word;
+ /* overflow-wrap: break-word;*/
 }
 .bottom__copy {
   display: flex;
@@ -772,8 +777,8 @@ button[type="button"].visually-hidden {
   position: relative; 
   width: 254px;
   margin-bottom: 24px;
-
-  overflow-wrap: break-word;
+/*
+  overflow-wrap: break-word;*/
 }
 .horizontal-form__column div:last-of-type {
   margin-bottom: 0;
@@ -937,11 +942,11 @@ button[type="button"].visually-hidden {
 }
 .range-container__round--custom-l:hover {
   margin-top: -1px;
-  margin-left: 3px;
+  margin-left: 0px;
 }
 .range-container__round--custom-r:hover {
   margin-top: -1px;
-  margin-left: 159px;
+  margin-left: 251px;
 }
 .horizontal-form__show {
   display: block;
@@ -1115,6 +1120,8 @@ button[type="button"].visually-hidden {
   align-items: flex-end;
   margin-left: auto;
 
+  min-height: 90px;
+
   text-align: right;
   line-height: 0;
   font-size: 0;
@@ -1126,15 +1133,17 @@ button[type="button"].visually-hidden {
 .output__button-bundle {
   display: flex;
 }
-.output__type-price div {
-  display: flex;
+.output__type-price p {
+  margin: 0;
   margin-right: 6px;
+
+  padding: 10px 0;
   
   width: 110px;
 
   line-height: 21px;
 }
-.output__type-price div:last-child {
+.output__type-price p:last-child {
   width: 142px;
 }
 .output__button-bundle div {
@@ -1158,14 +1167,10 @@ button[type="button"].visually-hidden {
   color: rgba(0, 0, 0, 0.3);
 }
 .output__button-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 110px;
   min-height: 27px;
   
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 3px 15px 2px 15px;
 
   font-size: 14px;
   line-height: 21px;
@@ -1196,18 +1201,20 @@ button[type="button"].visually-hidden {
 /* Rating container - inner styles */ 
 
 .output__rating {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-width: 110px;
   max-width: 200px;
-  min-height: 27px;
+  margin: 0;
+
+  padding: 0 10px;
 
   text-align: center;
-  line-height: 21px;
+  font-size: 14px;
+  line-height: 27px;  
+  white-space: nowrap;
   color: #666666;
 
-  background-color: #f2f2f2;
+  background-color: #f2f2f2;  
+  overflow: hidden;
 }
 .output__stars {
   margin-bottom: 46px;
@@ -1218,8 +1225,12 @@ button[type="button"].visually-hidden {
 .output__stars img:last-child {
   margin-right: 0;
 }
-.output__rating {
-  font-size: 14px;
-  line-height: 21px;
-  color: #333333;
+.output__count {
+  display: inline-block;
+
+  max-width: 30px;
+  vertical-align: top;
+
+  margin-left: 0.3em;
+  overflow: hidden;
 }
