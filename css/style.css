@@ -67,30 +67,24 @@ a {
   left: 0px;
 }
 
-p.overflow-wrapper {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-
-  outline: 1px solid red;
-}
-
 /* remove increment arrows */
 /* -- chrome */
-.remove-arrows::-webkit-outer-spin-button,
-.remove-arrows::-webkit-inner-spin-button {
+input[type=number].remove-arrows::-webkit-outer-spin-button,
+input[type=number].remove-arrows::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 /* --firefox */
-.remove-arrows {
+input[type=number].remove-arrows,
+input[type=number].remove-arrows:hover,
+input[type=number].remove-arrows:focus {
   -moz-appearance: textfield;
 }
 
-.remove-arrows:hover,
-.remove-arrows:focus {
-  -moz-appearance: number-input;
+/* remove cross-button in IE forms */
+input::-ms-clear {
+  display: none;
 }
 
 /* make placeholder black */
@@ -593,6 +587,7 @@ h3 {
 /* Calendar icon */
 .search__checkinout button {
   fill: #cacaca;
+  cursor: pointer;
 }
 
 .search__checkinout button:hover {
@@ -665,6 +660,7 @@ h3 {
   font-weight: bold;
 
   background-color: #f2f2f2;
+  cursor: pointer;
 }
 
 .increment:hover,
@@ -992,11 +988,17 @@ h3 {
   background-color: #ffffff;
 }
 
+/* remove red outline in FF and IE 11 */
+.horizontal-form__input:invalid{
+  box-shadow: none;
+  outline: none;
+}
+
 .horizontal-form__input {
   padding-left: 16px;
   padding-right: 13px;
 
-  width: 100%;
+  width: 50%;
   height: 27px;
 
   line-height: 21px;

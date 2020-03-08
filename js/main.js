@@ -1,4 +1,3 @@
-
 let openButton = document.getElementById('search__open');
 let form = document.querySelector('.search__form');
 let submit = form.querySelector('.search__find-button');
@@ -22,7 +21,7 @@ try {
 form.classList.add('modal-hide');
 
 /* Open modal window and push number values*/
-openButton.addEventListener('click', () => {
+openButton.addEventListener('click', function() {
   form.classList.toggle('modal-hide');
   form.classList.toggle('modal-show');
   checkInDate.focus();
@@ -34,9 +33,10 @@ openButton.addEventListener('click', () => {
 });
 
 /* Check form */
-submit.addEventListener('click', (evt) => {
+submit.addEventListener('click', function(evt) {
 
-  form.querySelectorAll('input').forEach((input) => {
+  for (let i=0; i < form.querySelectorAll('input').length; i++) {
+    let input = form.querySelectorAll('input')[i];
 
     if (!input.value) {
       if (input.classList.contains('required')) {
@@ -48,6 +48,9 @@ submit.addEventListener('click', (evt) => {
       input.classList.remove('red-outline');
       if (input.type === 'number' && isStorageSupport) localStorage.setItem(input.name, input.value);
     }     
-  })
+  }
 })
+
+
+
 
