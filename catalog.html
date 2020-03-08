@@ -118,18 +118,19 @@
               </div>
               <div class="range-container">
                 <!-- Range with two drag handles-->
+                <div class="range-container__scale">
+                  <div class="range-container__bar"></div>
+                </div>
                 <button class="visually-hidden" aria-label="Переключатель минимальной цены диапазона"
                   type="button"></button>
                 <span class="range-container__round range-container__round--custom-l"></span>
-                <div class="range-container__space range-container__space--left"></div>
                 <button class="visually-hidden" aria-label="Переключатель максимальной цены диапазона"
                   type="button"></button>
                 <span class="range-container__round range-container__round--custom-r"></span>
-                <div class="range-container__space range-container__space--right"></div>
               </div>
             </fieldset>
           </div>
-          <button class="horizontal-form__show button-reset" type="submit">Показать</button>
+          <button class="horizontal-form__show button-reset" type="submit"><span class="remove-nudge">Показать</span></button>
         </div>
       </form>
     </div>
@@ -138,21 +139,23 @@
       <p>Сортировка:</p>
       <ul class="sorting__type-of list">
         <li>
-          <button class="sorting__btn sorting__btn--current button-reset">по цене</button>
+          <button class="sorting__btn sorting__btn--current button-reset"><span class="remove-nudge">по цене</span></button>
         </li>
         <li>
-          <button class="sorting__btn button-reset">по типу</button>
+          <button class="sorting__btn button-reset"><span class="remove-nudge">по типу</span></button>
         </li>
         <li>
-          <button class="sorting__btn button-reset">по рейтингу</button>
+          <button class="sorting__btn button-reset"><span class="remove-nudge">по рейтингу</span></button>
         </li>
       </ul>
       <ul class="sorting__arrows list">
         <li class="sorting__choose-order">
           <button class="sorting__up button-reset" type="button">
+            <span class="remove-nudge">&#9650;</span>
             <span class="visually-hidden">Вверх</span>
           </button>
           <button class="sorting__down sorting__down--current button-reset" type="button">
+            <span class="remove-nudge">&#9660;</span>
             <span class="visually-hidden">Вниз</span>
           </button>
         </li>
