@@ -30,9 +30,6 @@ body {
   text-transform: uppercase;
 
   background-color: #f2f2f2;
-
-  /* remove horizontal scroll (hide blocks dropping through <body> */
-  overflow-x: hidden;
 }
 
 img {
@@ -97,6 +94,7 @@ input::-ms-clear {
 
 .placeholder-black::-moz-placeholder {
   color: #000000;
+  opacity: 1;
 }
 
 /* make placeholder white */
@@ -106,6 +104,7 @@ input::-ms-clear {
 
 .placeholder-white::-moz-placeholder {
   color: #ffffff;
+  opacity: 1;
 }
 
 /* Visually-hidden*/
@@ -563,7 +562,7 @@ h3 {
 }
 
 .search__checkinout input[type="text"] {
-  padding-left: 12px;
+  padding-left: 11px;
   margin: 0;
 
   width: 306px;
@@ -576,7 +575,16 @@ h3 {
 
   background-color: #f2f2f2;
 
-  border: 0;
+  border: 2px solid transparent;
+}
+
+.search__checkinout input:hover {
+  background-color: #ebebeb;
+}
+
+.search__checkinout input:focus {
+  background-color: #ffffff;
+  border: 2px solid #e5e5e5;
 }
 
 /* Calendar button */
@@ -599,16 +607,6 @@ h3 {
 
 .search__checkinout button:active {
   fill: #81b3d2;
-}
-
-/* Check in && check out - ADDITIONAL STYLES */
-.search__checkinout input:hover {
-  background-color: #ebebeb;
-}
-
-.search__checkinout input:focus {
-  background-color: #ffffff;
-  border: 2px solid #e5e5e5;
 }
 
 /* Input field: number of adults && children */
@@ -1426,7 +1424,7 @@ h3 {
 }
 
 .red-outline {
-  box-shadow: inset 0 0 1px 1px rgba(255, 0, 0, 1);
+  box-shadow: inset 0 0 1px 1px rgba(255, 0, 0, 0.7);
 }
 
 @keyframes bounce-open {
