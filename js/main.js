@@ -24,7 +24,11 @@ form.classList.add('modal-hide');
 openButton.addEventListener('click', function() {
   form.classList.toggle('modal-hide');
   form.classList.toggle('modal-show');
-  checkInDate.focus();
+  
+  setTimeout(function() {
+    checkInDate.focus()
+  }, 400);
+
 
   if (isStorageSupport) {
     adultsNum.value = adultsNumStorage;

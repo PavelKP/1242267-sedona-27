@@ -30,6 +30,9 @@ body {
   text-transform: uppercase;
 
   background-color: #f2f2f2;
+
+  /* remove horizontal scroll (hide blocks dropping through <body> */
+  overflow-x: hidden;
 }
 
 img {
@@ -106,7 +109,7 @@ input::-ms-clear {
 }
 
 /* Visually-hidden*/
-.visually-hidden:not(:focus):not(:active),
+.visually-hidden,
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden,
 button[type="button"].visually-hidden {
@@ -466,6 +469,14 @@ h3 {
   color: #333333;
 }
 
+.search__form-wrapper {
+  position: relative;
+
+  margin: 0 auto;
+
+  width: 568px;
+}
+
 .search__form-wrapper>button {
   position: relative;
   z-index: 3;
@@ -491,14 +502,6 @@ h3 {
 .search__form-wrapper>button:active {
   background-color: #503e33;
   color: rgba(256, 256, 256, 0.3);
-}
-
-.search__form-wrapper {
-  position: relative;
-
-  margin: 0 auto;
-
-  width: 568px;
 }
 
 /* FORM */
@@ -709,10 +712,9 @@ h3 {
 /* Footer containers */
 .bottom {
   display: flex;
-  padding-left: 72px;
-  padding-right: 72px;
+  padding: 9px 72px;
 
-  min-height: 120px;
+  height: 120px;
 
   background-color: #fefefe;
 }
@@ -739,10 +741,13 @@ h3 {
   align-items: center;
   justify-content: center;
 
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   width: 100%;
+  max-height: 102px;
+
+  overflow: hidden;
 }
 
 .bottom__copy {
@@ -767,8 +772,7 @@ h3 {
 
 /* Social icons */
 .bottom__social li {
-  margin-right: 3px;
-  margin-left: 3px;
+  margin: 3px;
 }
 
 .bottom__contacts a {
@@ -801,7 +805,7 @@ h3 {
   background-color: #5496bd;
 }
 
-/* Websity by */
+/* Website by */
 .bottom__copy svg {
   display: block;
 }
@@ -1418,7 +1422,7 @@ h3 {
 
 .modal-show {
   animation-name: bounce-open;
-  animation-duration: 0.2s;
+  animation-duration: 0.4s;
 }
 
 .red-outline {
