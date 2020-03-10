@@ -991,9 +991,12 @@ h3 {
 }
 
 /* remove red outline in FF and IE 11 */
-.horizontal-form__input:invalid{
+.horizontal-form__input:invalid {
   box-shadow: none;
   outline: none;
+}
+input:required {
+  box-shadow: none;
 }
 
 .horizontal-form__input {
@@ -1271,7 +1274,7 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
 
-  width: 500px;
+  width: 610px;
   min-height: 90px;
 }
 
@@ -1289,31 +1292,29 @@ h3 {
 }
 
 /* output__wrapper-button-links - inner styles */
-.output__type-price,
-.output__button-bundle {
+.output__links-container {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.output__type-price p {
-  margin: 0;
+.output__links-container div {
   margin-right: 6px;
+}
+
+.output__links-container div:last-child {
+  margin-right: 0px;
+}
+
+.output__links-container p {
+  margin: 0;
   padding-top: 7px;
   padding-bottom: 13px;
 
-  width: 110px;
+  min-width: 110px;
+  max-width: 300px;
 
   line-height: 21px;
-}
-
-.output__type-price p:last-child {
-  width: 142px;
-}
-
-.output__button-bundle div {
-  display: flex;
-  align-items: center;
-
-  margin-right: 6px;
 }
 
 .output__wrapper-button-links h2 {
@@ -1337,10 +1338,13 @@ h3 {
 }
 
 .output__button-link {
-  width: 110px;
-  min-height: 27px;
+  display: block;
 
   padding: 3px 15px 2px 15px;
+
+  min-width: 110px;
+  max-width: 300px;
+  min-height: 27px;
 
   font-size: 14px;
   line-height: 21px;
@@ -1361,7 +1365,8 @@ h3 {
 }
 
 .output__button-link--brown {
-  width: 142px;
+  min-width: 142px;
+  max-width: 300px;
   background-color: #766357;
 }
 
@@ -1384,11 +1389,15 @@ h3 {
   text-align: center;
   font-size: 14px;
   line-height: 27px;
-  white-space: nowrap;
   color: #666666;
 
   background-color: #f2f2f2;
-  overflow: hidden;
+}
+
+.output__count {
+  margin-left: 0.3em;
+
+  vertical-align: top;
 }
 
 .output__stars {
@@ -1403,16 +1412,6 @@ h3 {
   margin-right: 0;
 }
 
-.output__count {
-  display: inline-block;
-  margin-left: 0.3em;
-
-  max-width: 30px;
-
-  vertical-align: top;
-  overflow: hidden;
-}
-
 /* Modal window */
 .modal-hide {
   display: none;
@@ -1420,19 +1419,56 @@ h3 {
 
 .modal-show {
   animation-name: bounce-open;
-  animation-duration: 0.4s;
+  animation-duration: 0.5s;
 }
 
-.red-outline {
+.modal-close {
+  animation-name: bounce-close;
+  animation-duration: 0.5s;
+}
+
+input.red-outline {
   box-shadow: inset 0 0 1px 1px rgba(255, 0, 0, 0.7);
 }
 
+.modal-error {
+  animation-name: shake;
+  animation-duration: 0.3s;
+}
+
+/* Animation */
 @keyframes bounce-open {
   0% {
     transform: translateY(-86px);
+    opacity: 0;
   }
 
   100% {
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-close {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-86px);
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0%,
+  50% {
+    transform: translateX(2px);
+  }
+
+  25%,
+  100% {
+    transform: translateX(-2px);
   }
 }
