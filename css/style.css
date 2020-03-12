@@ -60,13 +60,6 @@ a {
   border: 0;
 }
 
-/* for text in buttons (IE 11)*/
-.remove-nudge {
-  position: relative;
-  top: 0px;
-  left: 0px;
-}
-
 /* remove increment arrows */
 /* -- chrome */
 input[type=number].remove-arrows::-webkit-outer-spin-button,
